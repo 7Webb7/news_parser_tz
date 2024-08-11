@@ -3,14 +3,23 @@ from PIL import Image, ImageTk
 
 root = tk.Tk()
 root.title("Petrovich News")
+root.geometry("350x350")
 
 background = Image.open("images/background.jpg")
 background_image = ImageTk.PhotoImage(background)
 
-background_label = tk.Label(root, image = background_image)
-background_label.place(relwidth=1, relheigh =1)
+text = tk.Label(root, text="Введите ссылку на новость:")
+text.pack()
 
-text = tk.Label(root, text  = "Введите ссылку на новость:").pack()
-runButton = tk.Button(root, text = "Поехали", fg = "red").pack()
+entry_url = tk.Entry(root)
+entry_url.pack()
+
+button_get = tk.Button(root, text="Подтвердить")
+button_get.pack()
+
+background_label = tk.Label(root, image=background_image)
+background_label.pack()
+
+
 
 root.mainloop()
